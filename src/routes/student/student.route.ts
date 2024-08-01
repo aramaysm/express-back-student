@@ -25,8 +25,9 @@ router.delete(
   '/:id',  
   studentController.remove,
 );
-router.delete(
-  '/multiple/:ids',  
+
+router.put(
+  '/remove/multiple',  
   studentController.removeMultiple,
 );
 

@@ -100,10 +100,13 @@ const remove: IController = async (req, res) => {
 };
 
 const removeMultiple: IController = async (req, res) => {
+  
   try {
+    
     const params: any = {
-      ids: req.params.ids,
+      ids: req.body.ids,
     }
+    
     await studentService.removeMultiple(params);
     return ApiResponse.result(res, params, httpStatusCodes.OK);
   } catch (e) {

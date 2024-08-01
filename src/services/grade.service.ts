@@ -24,6 +24,9 @@ const list = async (params: IStudentQueryParams) => {
     where: {
       isDeleted: false,
     },
+    order:{
+      id: "ASC",
+    },
   });
 
   const response = [];

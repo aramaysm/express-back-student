@@ -91,7 +91,7 @@ const update = async (params: IUpdateStudent) => {
   newStudent.email = params.email;
   newStudent.updatedAt = new Date(DateTimeUtility.getCurrentTimeStamp());
 
-  console.log("Update", newStudent);
+  
 
   return await myDataSource
     .getRepository(Student)
@@ -101,8 +101,9 @@ const update = async (params: IUpdateStudent) => {
 const list = async (params: IStudentQueryParams) => {
   const studts = await myDataSource.getRepository(Student).find({
     where: {
-      isDeleted: false,
+      isDeleted: false,      
     },
+    
     relations:[
       'grade'
     ]
